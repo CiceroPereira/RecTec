@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->foreign('id_profissao')->references('id')->on('profissao');
             $table->integer('id_perfil')->unsigned();
             $table->foreign('id_perfil')->references('id')->on('perfil');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

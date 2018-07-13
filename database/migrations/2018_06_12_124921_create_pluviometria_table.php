@@ -13,7 +13,7 @@ class CreatePluviometriaTable extends Migration
      */
     public function up()
     {
-        Schema::create('pluviometria', function (Blueprint $table) {
+        Schema::create('pluviometrias', function (Blueprint $table) {
             $table->increments('id');
             $table->date('data');
             $table->time('hora');

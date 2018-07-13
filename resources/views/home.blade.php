@@ -8,7 +8,8 @@
                 <div class="card-header">Pluviometria</div>
 
                 <div class="card-body">
-                   <form>
+                   <form method="post" action="{{url('/')}}">
+                    {{ csrf_field() }}
                         <div class="form-group">
                             <label>Nome</label>
                             <input name="nome" class="form-control" readonly="readonly" value="{{{Auth::user()->name}}}">
@@ -17,11 +18,13 @@
 
                         <div class="form-group">
                             <label>Pluviometro</label>
-                            <select class="form-control" name="pluviometro">
-                              <option value="volvo">Volvo</option>
-                              <option value="saab">Saab</option>
-                              <option value="mercedes">Mercedes</option>
-                              <option value="audi">Audi</option>
+                            <select class="form-control" name="pluviometro_id">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
                             </select>
                             
                         </div>
@@ -38,7 +41,7 @@
 
                         <div class="form-group">
                             <label>Lâmina(mm)</label>
-                            <input class="form-control" type="number" step="any" name="volume">
+                            <input class="form-control" type="number" step="any" name="lamina">
                         </div>
 
                         <div class="form-group">
