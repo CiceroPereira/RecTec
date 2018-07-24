@@ -35,11 +35,11 @@
                             </div>
 
                             <div style="margin-top: 10px" class="col-xs-12">
-                                <button type="submit" class="btn btn-primary" style="width: 49%">
+                                <button type="submit" class="btn btn-primary btn-block">
                                     {{ __('Entrar') }}
                                 </button>
                     
-                                <a href="{{url('/register')}}" class="btn btn-success" style="width: 49%" >Cadastrar</a>
+                                
 
                                    <div class="input-group" style="margin-top: 15px; text-align: right;">
                            
@@ -49,7 +49,7 @@
                                     </label>
                                 </div>
                             
-                        </div>
+                                 </div>
                                
                             </div>
                     </form>

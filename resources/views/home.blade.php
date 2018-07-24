@@ -6,6 +6,14 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Pluviometria</div>
+                 @if(session()->has('message'))
+                    <div class="alert alert-success alert-dismissible fade show">
+                        {{ session()->get('message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                @endif
 
                 <div class="card-body">
                    <form method="post" action="{{url('/')}}">

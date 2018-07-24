@@ -43,7 +43,7 @@ class PluviometriaController extends Controller
         $pluviometria->pluviometro_id = $request->pluviometro_id;
         $pluviometria->save();   
        // dd($request->all());
-        return redirect('/');
+        return redirect()->back()->with('message', 'Medição inserida com sucesso!');
     }
 
     /**

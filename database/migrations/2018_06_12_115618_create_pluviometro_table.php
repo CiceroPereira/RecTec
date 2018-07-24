@@ -15,6 +15,7 @@ class CreatePluviometroTable extends Migration
     {
         Schema::create('pluviometro', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('pluviometroId');
             $table->date('data_instalacao');
             $table->string('latitude');
             $table->string('longitude');
