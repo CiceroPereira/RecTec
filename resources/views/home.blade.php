@@ -27,12 +27,19 @@
                         <div class="form-group">
                             <label>Pluviometro</label>
                             <select class="form-control" name="pluviometro_id">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
+                              <option value="1">2018-prae-01</option>
+                              <option value="2">2018-prae-02</option>
+                              <option value="3">2018-dois-irmaos-01</option>
+                              <option value="4">2018-nazare-01</option>
+                              <option value="5">2018-nazare-02</option>
+                              <option value="6">2018-nazare-03</option>
+                              <option value="7">0000-pesqueira-01</option>
+                              <option value="8">0000-pesqueira-02</option>
+                              <option value="9">0000-pesqueira-03</option>
+                              <option value="10">0000-pesqueira-04</option>
+                              <option value="11">0000-pesqueira-05</option>
+                              <option value="12">0000-pesqueria-06</option>
+                              <option value="13">0000-pesqueria-07</option>
                             </select>
                             
                         </div>
