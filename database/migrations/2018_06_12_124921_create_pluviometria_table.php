@@ -33,6 +33,6 @@ class CreatePluviometriaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pluviometria');
+        Schema::dropIfExists('pluviometrias');
     }
 }
