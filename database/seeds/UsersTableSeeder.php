@@ -16,7 +16,18 @@ class UsersTableSeeder extends Seeder
             'name' => 'Cícero Lima',
             'email' => 'cicerojrlima@gmail.com',
             'password' => bcrypt('secret'),
-            'cpf' => '111111111111',
+            'cpf' => '10338116451',
+            'endereco' => 'recife',
+            'id_profissao' => 1,
+            'id_perfil' => 1,
+
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Aílton',
+            'email' => 'ailtonalvesst@hotmail.com',
+            'password' => bcrypt('secret'),
+            'cpf' => '65051868088',
             'endereco' => 'recife',
             'id_profissao' => 1,
             'id_perfil' => 1,
