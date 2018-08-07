@@ -33,13 +33,19 @@
                               <option value="4">2018-nazare-01</option>
                               <option value="5">2018-nazare-02</option>
                               <option value="6">2018-nazare-03</option>
-                              <option value="7">0000-pesqueira-01</option>
-                              <option value="8">0000-pesqueira-02</option>
-                              <option value="9">0000-pesqueira-03</option>
-                              <option value="10">0000-pesqueira-04</option>
-                              <option value="11">0000-pesqueira-05</option>
-                              <option value="12">0000-pesqueria-06</option>
-                              <option value="13">0000-pesqueria-07</option>
+                              <option value="7">2010-pesqueira-01</option>
+                              <option value="8">2010-pesqueira-02</option>
+                              <option value="9">2010-pesqueira-03</option>
+                              <option value="10">2010-pesqueira-05</option>
+                              <option value="11">2010-pesqueira-06</option>
+                              <option value="12">2010-pesqueria-07</option>
+                              <option value="13">2010-pesqueria-08</option>
+                              <option value="14">2014-automático-01</option>
+                              <option value="15">2014-automático-02</option>
+                              <option value="16">2014-automático-03</option>
+                              <option value="17">2014-automático-04</option>
+                              <option value="18">2014-automático-05</option>
+                              <option value="19">2014-automático-06</option>
                             </select>
                             
                         </div>

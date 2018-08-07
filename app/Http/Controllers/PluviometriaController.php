@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pluviometria;
+use Illuminate\Support\Facades\DB;
 
 class PluviometriaController extends Controller
 {
@@ -14,7 +15,8 @@ class PluviometriaController extends Controller
      */
     public function index()
     {
-        //
+        $all = DB::table('pluviometrias')->simplePaginate(10);
+        return view('list', compact('all'));
     }
 
     /**

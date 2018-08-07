@@ -13,37 +13,37 @@ class ModelosTableSeeder extends Seeder
     {
         DB::table('modelo')->insert([
             'tipo' => 'manual-las-pet-01',
-            'descricao' => 'Pluviometro manual do las feito com pet'
+            'descricao' => 'Pluviômetro feito com garrafa PET de 2 litros'
         ]);
 
         DB::table('modelo')->insert([
             'tipo' => 'manual-las-pvc-01',
-            'descricao' => 'Pluviometro manual do las feito com pvc'
+            'descricao' => 'Pluviômetro feito com conexões de PVC, com redução e funil'
         ]);
 
         DB::table('modelo')->insert([
             'tipo' => 'manual-las-pvc-02',
-            'descricao' => 'Pluviometro manual do las feito com pvc'
+            'descricao' => 'Pluviômetro feito com conexões de PVC, sem redução e funil'
+        ]);
+
+        DB::table('modelo')->insert([
+            'tipo' => 'manual-copp-pvc-01',
+            'descricao' => 'Pluviômetro de copo, construído em plástico cristal, formato afunilado'
         ]);
 
         DB::table('modelo')->insert([
             'tipo' => 'automatico-campebbel-01',
-            'descricao' => 'Pluviometro automático Campebbel'
+            'descricao' => 'Pluviômetro do tipo báscula com sensor eletrônico '
         ]);
 
          DB::table('modelo')->insert([
             'tipo' => 'automatico-onset-01',
-            'descricao' => 'Pluviometro automático Onset'
+            'descricao' => 'Pluviômetro do tipo báscula com sensor eletrônico '
         ]);
 
          DB::table('modelo')->insert([
             'tipo' => 'manual-omh-01',
-            'descricao' => 'Pluviometro manual omh'
-        ]);
-
-          DB::table('modelo')->insert([
-            'tipo' => 'manual- -01',
-            'descricao' => 'Pluviometro manual'
+            'descricao' => 'pluviometro ville de paris'
         ]);
     }
 }

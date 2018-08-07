@@ -44,6 +44,10 @@
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Cadastrar medidor') }}</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/listar') }}">{{ __('Histórico') }}</a>
+                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
