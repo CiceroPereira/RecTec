@@ -43,6 +43,6 @@ class DatabaseSeeder extends Seeder
         
          $this->call(ModelosTableSeeder::class);
          $this->call(UsersTableSeeder::class);
-      //   $this->call(PluviometrosSeeder::class); 
+         $this->call(PluviometrosSeeder::class); 
     }
 }
