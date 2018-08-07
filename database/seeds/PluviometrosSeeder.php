@@ -22,7 +22,7 @@ class PluviometrosSeeder extends Seeder
         ]);
 
          DB::table('pluviometro')->insert([
-         	'pluviometroId' => '2018-prae-02'
+         	'pluviometroId' => '2018-prae-02',
             'latitude' => '-8,014466',
             'longitude' => '-34,947309',
            'data_instalacao' => date("2018-07-05"),
