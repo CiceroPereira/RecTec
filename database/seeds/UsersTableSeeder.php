@@ -33,5 +33,16 @@ class UsersTableSeeder extends Seeder
             'id_perfil' => 1,
 
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Ricardo Souza',
+            'email' => 'ricardo.souza@ufrpe.br',
+            'password' => bcrypt('secret'),
+            'cpf' => '43966233215',
+            'endereco' => 'recife',
+            'id_profissao' => 1,
+            'id_perfil' => 1,
+
+        ]);
     }
 }
