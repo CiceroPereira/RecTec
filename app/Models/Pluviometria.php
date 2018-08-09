@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pluviometria extends Model
 {
+	protected $table = 'pluviometrias';
     protected $primaryKey = "id";
 }
