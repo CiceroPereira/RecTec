@@ -16,7 +16,7 @@ class PluviometriasSeeder extends Seeder
             'hora' => time('09:00'),
             'lamina' => 1.8,
             'user_id' =>  1,
-            'pluviometro_id' => 1,
+            'pluviometro_id' => 3,
         ]);
 
           DB::table('users')->insert([
@@ -24,7 +24,7 @@ class PluviometriasSeeder extends Seeder
             'hora' => time('09:00'),
             'lamina' => 4.0,
             'user_id' =>  1,
-            'pluviometro_id' => 1,
+            'pluviometro_id' => 3,
         ]);
 
           DB::table('users')->insert([
@@ -32,7 +32,7 @@ class PluviometriasSeeder extends Seeder
             'hora' => time('09:00'),
             'lamina' => 4.0,
             'user_id' =>  1,
-            'pluviometro_id' => 1,
+            'pluviometro_id' => 3,
         ]);
     }
 }
