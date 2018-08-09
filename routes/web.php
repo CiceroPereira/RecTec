@@ -18,4 +18,5 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/', 'HomeController@index')->name('home');
 	Route::post('/', 'PluviometriaController@store');
 	Route::get('/listar', 'PluviometriaController@index');
+	Route::get('/listarr', 'PluviometriaController@indexx');
  });

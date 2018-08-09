@@ -17,7 +17,14 @@ class PluviometriaController extends Controller
     {
         $all = DB::table('pluviometrias')->simplePaginate(10);
         return view('list', compact('all'));
+       // return $all->toJson();
     }
+/*
+    public function indexx()
+    {
+        $all = DB::table('pluviometrias')->simplePaginate(10);
+        return $all->toJson();
+    }*/
 
     /**
      * Show the form for creating a new resource.
@@ -43,7 +50,7 @@ class PluviometriaController extends Controller
         $pluviometria->data = $request->data;
         $pluviometria->user_id = $request->user_id;
         $pluviometria->pluviometro_id = $request->pluviometro_id;
-        $pluviometria->save();   
+        $pluviometria->insert();   
        // dd($request->all());
         return redirect()->back()->with('message', 'Medição inserida com sucesso!');
     }
