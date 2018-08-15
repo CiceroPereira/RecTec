@@ -44,6 +44,7 @@ class PluviometriaController extends Controller
      */
     public function store(Request $request)
     {
+        /*
         $pluviometria = new Pluviometria;
         $pluviometria->lamina = $request->lamina;
         $pluviometria->hora = $request->hora;
@@ -53,6 +54,20 @@ class PluviometriaController extends Controller
         $pluviometria->save();   
        // dd($request->all());
         return redirect()->back()->with('message', 'Medição inserida com sucesso!');
+        */
+        $lamina = $request->input('lamina');
+        $hora = $request->input('hora');
+        $data = $request->input('data');
+        $user_id = $request->input('user_id');
+        $pluviometro_id = $request->input('pluviometro_id');
+
+        DB::table('pluviometrias')->insert(
+            ['data' => $data, 'hora' => $hora, 'lamina' => $lamina,
+            'user_id' => $user_id, 'pluviometro_id' => $pluviometro_id ]
+        );
+
+        return redirect()->back()->with('message', 'Medição inserida com sucesso!');
+
     }
 
     /**
