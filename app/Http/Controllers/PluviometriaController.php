@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pluviometria;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class PluviometriaController extends Controller
 {
@@ -55,6 +56,7 @@ class PluviometriaController extends Controller
        // dd($request->all());
         return redirect()->back()->with('message', 'Medição inserida com sucesso!');
         */
+        Log::info('Inicio inserção');
         $lamina = $request->input('lamina');
         $hora = $request->input('hora');
         $data = $request->input('data');
@@ -65,7 +67,7 @@ class PluviometriaController extends Controller
             ['data' => $data, 'hora' => $hora, 'lamina' => $lamina,
             'user_id' => $user_id, 'pluviometro_id' => $pluviometro_id ]
         );
-
+        Log::info('Inserção realizada com sucesso');
         return redirect()->back()->with('message', 'Medição inserida com sucesso!');
 
     }

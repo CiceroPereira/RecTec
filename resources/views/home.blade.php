@@ -62,7 +62,7 @@
 
                         <div class="form-group">
                             <label>Lâmina(mm)</label>
-                            <input class="form-control" type="number" step="any" name="lamina">
+                            <input class="form-control" type="number" step="any" name="lamina" required="required">
                         </div>
 
                         <div class="form-group">
