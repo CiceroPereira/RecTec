@@ -16,7 +16,7 @@
                 @endif
 
                 <div class="card-body">
-                   <form method="post" action="{{url('/')}}">
+                   <form method="POST" action="{{url('/pluvimetria')}}">
                     @csrf
                     {{json_encode($errors->all())}}
                         <div class="form-group">
