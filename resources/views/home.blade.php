@@ -17,7 +17,7 @@
 
                 <div class="card-body">
                    <form method="post" action="{{url('/')}}">
-                    {!! csrf_field() !!}
+                    @csrf
                     {{json_encode($errors->all())}}
                         <div class="form-group">
                             <label>Nome</label>
