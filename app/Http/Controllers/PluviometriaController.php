@@ -17,6 +17,7 @@ class PluviometriaController extends Controller
     public function index()
     {
         $all = DB::table('pluviometrias')->simplePaginate(10);
+        //dd($all);
         return view('list', compact('all'));
        // return $all->toJson();
     }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Pluviometro;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $all = DB::table('pluviometro')->get();
+        $tipo = DB::table('modelo')->get();
+        // dd($all);
+        return view('home', compact('all','tipo'));
     }
 }

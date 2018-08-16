@@ -17,7 +17,7 @@
 
                 <div class="card-body">
                    <form method="post" action="{{url('/')}}">
-                    {{ csrf_field() }}
+                    {!! csrf_field() !!}
                         <div class="form-group">
                             <label>Nome</label>
                             <input name="nome" class="form-control" readonly="readonly" value="{{{Auth::user()->name}}}">
@@ -25,29 +25,18 @@
                         </div>
 
                         <div class="form-group">
+                         
                             <label>Pluviometro</label>
-                            <select class="form-control" name="pluviometro_id">
-                              <option value="1">2018-prae-01</option>
-                              <option value="2">2018-prae-02</option>
-                              <option value="3">2018-dois-irmaos-01</option>
-                              <option value="4">2018-nazare-01</option>
-                              <option value="5">2018-nazare-02</option>
-                              <option value="6">2018-nazare-03</option>
-                              <option value="7">2010-pesqueira-01</option>
-                              <option value="8">2010-pesqueira-02</option>
-                              <option value="9">2010-pesqueira-03</option>
-                              <option value="10">2010-pesqueira-05</option>
-                              <option value="11">2010-pesqueira-06</option>
-                              <option value="12">2010-pesqueria-07</option>
-                              <option value="13">2010-pesqueria-08</option>
-                              <option value="14">2014-automático-01</option>
-                              <option value="15">2014-automático-02</option>
-                              <option value="16">2014-automático-03</option>
-                              <option value="17">2014-automático-04</option>
-                              <option value="18">2014-automático-05</option>
-                              <option value="19">2014-automático-06</option>
+                            <select name="pluviometro_id" id="pluviometro" class="form-control">
+                                @foreach($all as $pluviometro )
+                                  @foreach($tipo as $type )
+                                    @if($type->id == $pluviometro->modelo_id)
+                                      @break
+                                      @endif
+                                  @endforeach
+                                <option value="{{ $pluviometro->id }}">{{ $pluviometro->pluviometroId }} : {{$type->tipo}}</option>
+                                @endforeach
                             </select>
-                            
                         </div>
 
                         <div class="form-group">
