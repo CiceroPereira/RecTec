@@ -16,9 +16,8 @@
                 @endif
 
                 <div class="card-body">
-                   <form method="POST" action="{{url('/pluvimetria')}}">
+                   <form method="post" action="{{url('/pluvimetria')}}">
                     @csrf
-                    {{json_encode($errors->all())}}
                         <div class="form-group">
                             <label>Nome</label>
                             <input name="nome" class="form-control" readonly="readonly" value="{{{Auth::user()->name}}}">
