@@ -33,7 +33,7 @@
                             </div>
 
                              <div class="input-group" style="margin-top: 5px">
-                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" placeholder="CPF" required autofocus>
+                                <input id="cpf" type="number" pattern="[0-9]" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" placeholder="CPF" required autofocus>
 
                                 @if ($errors->has('cpf'))
                                     <span class="invalid-feedback">
@@ -61,10 +61,25 @@
                                     </span>
                                 @endif
                             </div>
-
-                                <input id="id_profissao" type="hidden" class="form-control{{ $errors->has('id_profissao') ? ' is-invalid' : '' }}" name="id_profissao" value="1" required>
                             
-                                <input id="id_perfil" type="hidden" class="form-control{{ $errors->has('id_perfil') ? ' is-invalid' : '' }}" name="id_perfil" value="1" required>
+                            <div class="input-group" style="margin-top: 5px">
+                            
+                                <select name="id_perfil" id="id_perfil" class="form-control" required="required">
+                                    <option style="display:none;" selected disabled value="">Perfil</option>
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Registrador</option>
+                                </select>
+                          </div>
+
+                            <div class="input-group" style="margin-top: 5px">
+                            
+                               <select name="id_profissao" id="id_profissao" class="form-control" required="required">
+                                    <option style="display:none;" selected disabled value="">Profissão</option>
+                                @foreach($all as $profissoes)
+                                    <option value="{{$profissoes->id}}">{{$profissoes->descricao}}</option>
+                                    @endforeach
+                                </select>
+                          </div>
 
                             <div class="input-group" style="margin-top: 5px">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Senha" required>

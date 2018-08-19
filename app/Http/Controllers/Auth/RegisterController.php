@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -40,6 +42,15 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function showRegistrationForm()
+    {
+        if (Auth::user()->id_perfil != 1) {
+            return redirect('/');
+        }
+         $all = DB::table('profissao')->get();
+         return view("auth.register", compact("all"));
     }
 
     public function register(Request $request)

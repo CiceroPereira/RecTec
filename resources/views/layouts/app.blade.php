@@ -40,10 +40,15 @@
                         <li>
                             
                         </li>
+                        @if(Auth::user()->id_perfil != 2)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Cadastrar medidor') }}</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/configurar') }}">{{ __('Configurar medidor') }}</a>
+                        </li>
+                        @endif
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/listar') }}">{{ __('Histórico') }}</a>
                         </li>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pluviometria;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class PluviometriaController extends Controller
 {
@@ -57,7 +58,7 @@ class PluviometriaController extends Controller
        // dd($request->all());
         return redirect()->back()->with('message', 'Medição inserida com sucesso!');
         */
-        Log::info('Inicio inserção');
+      //  Log::info('Inicio inserção');
         $lamina = $request->input('lamina');
         $hora = $request->input('hora');
         $data = $request->input('data');
@@ -68,7 +69,7 @@ class PluviometriaController extends Controller
             ['data' => $data, 'hora' => $hora, 'lamina' => $lamina,
             'user_id' => $user_id, 'pluviometro_id' => $pluviometro_id ]
         );
-        Log::info('Inserção realizada com sucesso');
+      //  Log::info('Inserção realizada com sucesso');
         return redirect()->back()->with('message', 'Medição inserida com sucesso!');
 
     }
@@ -116,5 +117,38 @@ class PluviometriaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showConfig(){
+
+        if (Auth::user()->id_perfil != 1) {
+            return redirect('/');
+        }
+
+        $all = DB::table('users')->get();
+        $pluviometro = DB::table('pluviometro')->get();
+
+        return view('config', compact('all','pluviometro'));
+
+    }
+
+    public function config(Request $request){
+
+
+        if (Auth::user()->id_perfil != 1) {
+            return redirect('/');
+        }
+
+        $user_id = $request->input('user_id');
+        $pluviometro_id = $request->input('pluviometro_id');
+
+        
+
+        DB::table('usuario_pluviometro')->insert(
+            ['usuario_id' => $user_id, 'pluviometro_id' => $pluviometro_id]
+        );
+      //  Log::info('Inserção realizada com sucesso');
+        return redirect()->back()->with('message', 'Configuração realizada com sucesso!');
+
     }
 }

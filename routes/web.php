@@ -19,4 +19,6 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::post('/pluvimetria', 'PluviometriaController@store');
 	Route::get('/listar', 'PluviometriaController@index');
 	Route::get('/listarr', 'PluviometriaController@indexx');
+	Route::get('/configurar', 'PluviometriaController@showConfig');
+	Route::post('/configurar/insert', 'PluviometriaController@config');
  });

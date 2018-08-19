@@ -27,14 +27,25 @@
                         <div class="form-group">
                          
                             <label>Pluviometro</label>
-                            <select name="pluviometro_id" id="pluviometro" class="form-control">
+                            <select name="pluviometro_id" id="pluviometro" class="form-control" required="required">
                                 @foreach($all as $pluviometro )
                                   @foreach($tipo as $type )
                                     @if($type->id == $pluviometro->modelo_id)
                                       @break
                                       @endif
                                   @endforeach
-                                <option value="{{ $pluviometro->id }}">{{ $pluviometro->pluviometroId }} : {{$type->tipo}}</option>
+
+                                    @if(Auth::user()->id_perfil == 1 )
+                                      <option value="{{ $pluviometro->id }}">{{ $pluviometro->pluviometroId }} : {{$type->tipo}}</option>
+                                      @else
+                                        @foreach($medidor as $medidores)
+                                          @if($pluviometro->id == $medidores->pluviometro_id)
+                                             <option value="{{ $pluviometro->id }}">{{ $pluviometro->pluviometroId }} : {{$type->tipo}}</option>
+                                          @endif
+                                        @endforeach
+
+                                    @endif
+
                                 @endforeach
                             </select>
                         </div>
