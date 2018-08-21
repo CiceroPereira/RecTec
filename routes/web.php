@@ -21,4 +21,8 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/listarr', 'PluviometriaController@indexx');
 	Route::get('/configurar', 'PluviometriaController@showConfig');
 	Route::post('/configurar/insert', 'PluviometriaController@config');
+	Route::delete('listar/delete/{id}', 'PluviometriaController@destroy');
+	Route::get('/edit/{id}' , 'PluviometriaController@edit');
+	Route::put('/edit/{id}' , 'PluviometriaController@edit');
+	Route::put('/edit/{id}' , 'PluviometriaController@update');
  });

@@ -18,8 +18,9 @@ class PluviometriaController extends Controller
     public function index()
     {
         $all = DB::table('pluviometrias')->simplePaginate(10);
+        $nomes = DB::table('users')->get();
         //dd($all);
-        return view('list', compact('all'));
+        return view('list', compact('all', 'nomes'));
        // return $all->toJson();
     }
 /*
@@ -93,7 +94,13 @@ class PluviometriaController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $all = DB::table('pluviometro')->get();
+        $tipo = DB::table('modelo')->get();
+        $medidor = DB::table('usuario_pluviometro')->where('usuario_id', '=', Auth::user()->id)->get();
+
+        $dado = Pluviometria::findOrFail($id);
+        return view('editar', compact('dado', 'all', 'tipo', 'medidor'));
     }
 
     /**
@@ -105,7 +112,13 @@ class PluviometriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dado = Pluviometria::findOrFail($id);
+        $dado->lamina = $request->lamina;
+        $dado->hora = $request->hora;
+        $dado->data = $request->data;
+        $dado->pluviometro_id = $request->pluviometro_id;
+        $dado->update(); 
+        return redirect('/listar');
     }
 
     /**
@@ -116,7 +129,9 @@ class PluviometriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dado = Pluviometria::findOrFail($id);
+        $dado->delete();
+        return back()->with(['success' => 'Dado deletado com sucesso']);
     }
 
     public function showConfig(){

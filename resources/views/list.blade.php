@@ -6,6 +6,7 @@
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
+						<th>Nome</th>
 						<th>Data</th>
 						<th>Hora</th>
 						<th>Lâmina(mm)</th>
@@ -15,10 +16,16 @@
 				<tbody>
 				@foreach($all as $dados)
 					<tr>
+						@foreach($nomes as $names)
+							@if($names->id == $dados->user_id)
+								@break
+							@endif
+						@endforeach		
+						<td>{{$names->name}}</td>
 						<td>{{$dados->data}}</td>
 						<td>{{$dados->hora}}</td>
 						<td>{{$dados->lamina}}mm</td>
-						@if(Auth::user()->id == 1 || Auth::user()->id == $dados->user_id)
+						@if(Auth::user()->id_perfil == 1 || Auth::user()->id == $dados->user_id)
 						<td style="text-align: center;">
 							<a href="{{url('/edit', $dados->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 						</td>
