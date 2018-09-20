@@ -17,10 +17,13 @@ class PluviometriaController extends Controller
      */
     public function index()
     {
-        $all = DB::table('pluviometrias')->simplePaginate(10);
-        $nomes = DB::table('users')->get();
-        //dd($all);
-        return view('list', compact('all', 'nomes'));
+        $all = Pluviometria::paginate(10);
+      //  $all = DB::table('pluviometrias')->simplePaginate(10);
+     //   $nomes = DB::table('users')->get();
+      // dd($all);
+        $modelo = DB::table('modelo')->get();
+        $names = DB::table('users')->get();
+        return view('list', compact('all', 'names', 'modelo'));
        // return $all->toJson();
     }
 /*
@@ -71,7 +74,7 @@ class PluviometriaController extends Controller
             'user_id' => $user_id, 'pluviometro_id' => $pluviometro_id ]
         );
       //  Log::info('Inserção realizada com sucesso');
-        return redirect()->back()->with('message', 'Medição inserida com sucesso!');
+        return redirect()->back()->with('message', 'Medição inserida com sucesso!')->with('data', $hora);
 
     }
 
@@ -157,13 +160,50 @@ class PluviometriaController extends Controller
         $user_id = $request->input('user_id');
         $pluviometro_id = $request->input('pluviometro_id');
 
-        
+        if (DB::table('usuario_pluviometro')->where('usuario_id', '=', $user_id, 'AND', 'pluviometro_id', '=', $pluviometro_id)){
+            return redirect()->back()->with('message2', 'O usuário já possui acesso a este pluviometro!');
+        }
 
         DB::table('usuario_pluviometro')->insert(
             ['usuario_id' => $user_id, 'pluviometro_id' => $pluviometro_id]
         );
       //  Log::info('Inserção realizada com sucesso');
         return redirect()->back()->with('message', 'Configuração realizada com sucesso!');
+
+    }
+
+    public function buscaIntervalo(Request $request){
+
+        $date_one = $request->date_one;
+        $date_two = $request->date_two;
+
+        $modelo = DB::table('modelo')->get();
+        $names = DB::table('users')->get();
+        $all = Pluviometria::whereBetween('data',array( $date_one, $date_two))->paginate(10);
+
+        //dd($all);
+       return view('list')->with(compact('all', 'names', 'modelo'));
+
+    }
+
+    public function buscaUser(Request $request){
+
+        $modelo = DB::table('modelo')->get();
+        $names = DB::table('users')->get();
+        $all = Pluviometria::where('user_id', '=',$request->user_id)->paginate(10);
+
+      //dd($all);
+        return view('list')->with(compact('all', 'names', 'modelo'));
+
+    }
+
+    public function buscaTipo(Request $request){
+
+        $modelo = DB::table('modelo')->get();
+        $names = DB::table('users')->get();
+        $all = Pluviometria::where('pluviometro_id', '=', $request->pluviometro_id)->paginate(10);
+
+        return view('list')->with(compact('all', 'names', 'modelo'));
 
     }
 }

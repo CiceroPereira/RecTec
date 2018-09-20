@@ -26,10 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $all = DB::table('pluviometro')->get();
-        $tipo = DB::table('modelo')->get();
+        $all = Pluviometro::all();
         $medidor = DB::table('usuario_pluviometro')->where('usuario_id', '=', Auth::user()->id)->get();
         // dd($medidor);
-        return view('home', compact('all','tipo', 'medidor'));
+        return view('home', compact('all','medidor'));
     }
 }

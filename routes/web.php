@@ -25,4 +25,10 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/edit/{id}' , 'PluviometriaController@edit');
 	Route::put('/edit/{id}' , 'PluviometriaController@edit');
 	Route::put('/edit/{id}' , 'PluviometriaController@update');
+	Route::get('/getnomes', 'PluviometriaController@buscaUser');
+	Route::post('/getnomes', 'PluviometriaController@buscaUser');
+	Route::get('/getdatas', 'PluviometriaController@buscaIntervalo');
+	Route::post('/getdatas', 'PluviometriaController@buscaIntervalo');
+	Route::get('/gettipo', 'PluviometriaController@buscaTipo');
+	Route::post('/gettipo', 'PluviometriaController@buscaTipo');
  });

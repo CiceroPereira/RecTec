@@ -13,6 +13,15 @@
                          </button>
                     </div>
                 @endif
+
+                @if(session()->has('message2'))
+                    <div class="alert alert-danger alert-dismissible fade show">
+                        {{ session()->get('message2') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                         </button>
+                    </div>
+                @endif
                 
                 <div style="text-align: center;"><h3 style="opacity: 0.6">Usuário e Pluviometros</h3></div>
                 <div class="form-group" style="text-align: center; margin-top: 10px">

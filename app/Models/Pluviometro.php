@@ -8,4 +8,8 @@ class Pluviometro extends Model
 {
     protected $table = 'pluviometro';
     protected $primaryKey = "id";
+
+    public function modelo(){
+    	return $this->belongsTo('App\Models\Modelo', 'modelo_id');	
+    }
 }

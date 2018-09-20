@@ -29,18 +29,12 @@
                             <label>Pluviometro</label>
                             <select name="pluviometro_id" id="pluviometro" class="form-control" required="required">
                                 @foreach($all as $pluviometro )
-                                  @foreach($tipo as $type )
-                                    @if($type->id == $pluviometro->modelo_id)
-                                      @break
-                                      @endif
-                                  @endforeach
-
                                     @if(Auth::user()->id_perfil == 1 )
-                                      <option value="{{ $pluviometro->id }}">{{ $pluviometro->pluviometroId }} : {{$type->tipo}}</option>
+                                      <option value="{{ $pluviometro->id }}">{{ $pluviometro->pluviometroId }} : {{$pluviometro->modelo->tipo}}</option>
                                       @else
                                         @foreach($medidor as $medidores)
                                           @if($pluviometro->id == $medidores->pluviometro_id)
-                                             <option value="{{ $pluviometro->id }}">{{ $pluviometro->pluviometroId }} : {{$type->tipo}}</option>
+                                             <option value="{{ $pluviometro->id }}">{{ $pluviometro->pluviometroId }} : {{$pluviometro->modelo->tipo}}</option>
                                           @endif
                                         @endforeach
 
@@ -57,7 +51,11 @@
 
                        <div class="form-group">
                           <label>Hora</label>
-                            <input class="form-control" type="time" name="hora" value="{{ date('H:i') }}">
+                          @if(session()->has('data'))
+                            <input class="form-control" type="time" name="hora" value="{{session()->get('data')}}">
+                          @else
+                         <input class="form-control" type="time" name="hora" value="{{ date('H:i') }}">
+                         @endif
                        </div>
 
                         <div class="form-group">

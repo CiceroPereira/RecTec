@@ -19,6 +19,34 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+        $("#submit").click(function (e) {
+            if($("#change").val() === 'consulta_nome'){
+                $("#consulta_nome").show();
+                $("#consulta_data").hide();
+                $("#consulta_tipo").hide();
+            }
+            else if($("#change").val() === 'consulta_data'){
+                $("#consulta_nome").hide();
+                $("#consulta_data").show();
+                $("#consulta_tipo").hide();
+            }
+
+            else if($("#change").val() === 'consulta_tipo'){
+                $("#consulta_nome").hide();
+                $("#consulta_data").hide();
+                $("#consulta_tipo").show();
+            }
+
+     });
+});
+
+
+    </script>
 </head>
 @guest
 <body style="background-image: url(img/rios.jpg);">
@@ -94,4 +122,5 @@
         </main>
     </div>
 </body>
+
 </html>
