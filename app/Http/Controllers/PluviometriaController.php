@@ -181,8 +181,8 @@ class PluviometriaController extends Controller
         $names = DB::table('users')->get();
         $all = Pluviometria::whereBetween('data',array( $date_one, $date_two))->paginate(10);
 
-        //dd($all);
-       return view('list')->with(compact('all', 'names', 'modelo'));
+//        dd($all);
+       return view('list', compact('all', 'names', 'modelo'));
 
     }
 
@@ -192,8 +192,8 @@ class PluviometriaController extends Controller
         $names = DB::table('users')->get();
         $all = Pluviometria::where('user_id', '=',$request->user_id)->paginate(10);
 
-      //dd($all);
-        return view('list')->with(compact('all', 'names', 'modelo'));
+      //  dd($all);
+        return view('list', compact('all', 'names', 'modelo'));
 
     }
 
@@ -203,7 +203,7 @@ class PluviometriaController extends Controller
         $names = DB::table('users')->get();
         $all = Pluviometria::where('pluviometro_id', '=', $request->pluviometro_id)->paginate(10);
 
-        return view('list')->with(compact('all', 'names', 'modelo'));
+        return view('list', compact('all', 'names', 'modelo'));
 
     }
 }
