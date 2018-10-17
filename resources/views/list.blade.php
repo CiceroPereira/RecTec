@@ -116,7 +116,7 @@
 				</tbody>
 			</table>
 			
-			{{ $all->appends(Request::except('page'))->render() }}
+			{{ $all->render() }}
 
 		</div>
 	</div>
