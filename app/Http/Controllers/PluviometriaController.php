@@ -63,12 +63,18 @@ class PluviometriaController extends Controller
         return redirect()->back()->with('message', 'Medição inserida com sucesso!');
         */
       //  Log::info('Inicio inserção');
-        $lamina = $request->input('lamina');
+        $pluviometro_id = $request->input('pluviometro_id');
+        if($pluviometro_id == 2){
+            $lamina = $request->input('lamina');
+            $lamina = $lamina/(16.28601632);
+        }else{
+           $lamina = $request->input('lamina'); 
+        }
+
         $hora = $request->input('hora');
         $data = $request->input('data');
         $user_id = $request->input('user_id');
-        $pluviometro_id = $request->input('pluviometro_id');
-
+    
         DB::table('pluviometrias')->insert(
             ['data' => $data, 'hora' => $hora, 'lamina' => $lamina,
             'user_id' => $user_id, 'pluviometro_id' => $pluviometro_id ]
