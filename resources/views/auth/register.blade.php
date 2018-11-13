@@ -14,7 +14,7 @@
                     </div>
                 @endif
                  <div style="text-align: center">
-                     <img src="img\logo.png" height="132px" width= "100px">
+                     <img src="img/rectec.png" height="156px" width= "250px">
                 </div>
                 
                 <div style="text-align: center;"><h3 style="opacity: 0.6">Novo medidor</h3></div>

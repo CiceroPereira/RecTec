@@ -6,8 +6,8 @@
         <div class="col-md-8">
             <div class="jumbotron" style="margin: 50px auto; width: 320px;">
 
-                <div style="text-align: center; margin-top: 5px">
-                     <img src="img/logo.png" height="132px" width= "100px">
+                <div style="text-align: center; margin-top: 10px">
+                     <img src="img/rectec.png" height="156px" width= "250px">
                 </div>
 
 
