@@ -14,6 +14,6 @@ class Pluviometria extends Model
     }
 
     public function pluviometro(){
-    	return $this->belongsTo('App\Models\pluviometro', 'pluviometro_id');
+    	return $this->belongsTo('App\Models\Pluviometro', 'pluviometro_id');
     }
 }
