@@ -81,6 +81,7 @@
 						<th>Data</th>
 						<th>Hora</th>
 						<th>Lâmina(mm)</th>
+						<th>Pluviômetro(tipo)</th>
 						<th colspan="2">Ações</th>
 					</tr>
 				</thead>
@@ -92,6 +93,7 @@
 						<td>{{$dados->data}}</td>
 						<td>{{$dados->hora}}</td>
 						<td>{{$dados->lamina}}mm</td>
+						<td>{{$dados->pluviometro->modelo->tipo}}</td>
 						@if(Auth::user()->id_perfil == 1 || Auth::user()->id == $dados->user_id)
 						<td style="text-align: center;">
 							<a href="{{url('/edit', $dados->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
