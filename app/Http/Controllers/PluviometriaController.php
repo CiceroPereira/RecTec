@@ -183,7 +183,7 @@ class PluviometriaController extends Controller
         }
 
         DB::table('usuario_pluviometro')->insert(
-            ['usuario_id' => $user_id, 'pluviometro_id' => $pluviometro_id]
+            ['usuario_id' => $request->user_id, 'pluviometro_id' => $request->pluviometro_id]
         );
       //  Log::info('Inserção realizada com sucesso');
         return redirect()->back()->with('message', 'Configuração realizada com sucesso!');
