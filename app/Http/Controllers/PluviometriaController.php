@@ -130,11 +130,13 @@ class PluviometriaController extends Controller
            $lamina = $request->lamina; 
         }
 
+        $dado->lamina = $lamina;
         $dado->hora = $request->hora;
         $dado->data = $request->data;
         $dado->pluviometro_id = $request->pluviometro_id;
         $dado->update(); 
         return redirect('/listar');
+       
     }
 
     /**
