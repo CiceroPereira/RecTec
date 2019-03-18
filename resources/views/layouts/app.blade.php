@@ -50,7 +50,8 @@
     </script>
 </head>
 @guest
-<body style="background-image: url(img/rios.jpg);">
+    <body style="background-image: url(img/rios.jpg);"> 
+ <!--   <body style="background-color: #0094EA"> -->
     @else
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark navbar-laravel" style="background-color: #0091ea">

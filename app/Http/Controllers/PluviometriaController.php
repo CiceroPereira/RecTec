@@ -122,7 +122,14 @@ class PluviometriaController extends Controller
     public function update(Request $request, $id)
     {
         $dado = Pluviometria::findOrFail($id);
-        $dado->lamina = $request->lamina;
+
+        if($dado->pluviometro_id == 2){
+            $lamina = $request->lamina;
+            $lamina = $lamina/(16.28601632);
+        }else{
+           $lamina = $request->lamina; 
+        }
+
         $dado->hora = $request->hora;
         $dado->data = $request->data;
         $dado->pluviometro_id = $request->pluviometro_id;
