@@ -172,10 +172,13 @@ class PluviometriaController extends Controller
             return redirect('/');
         }
 
-        $user_id = $request->input('user_id');
-        $pluviometro_id = $request->input('pluviometro_id');
+        $record = DB::table('usuario_pluviometro')
+                ->where([
+                    ['usuario_id', '=', $request->user_id],
+                    ['pluviometro_id', '=', $request->pluviometro_id]
+                ])->get();
 
-        if (DB::table('usuario_pluviometro')->where('usuario_id', '=', $user_id, 'AND', 'pluviometro_id', '=', $pluviometro_id)){
+        if(!$record->isEmpty()){
             return redirect()->back()->with('message2', 'O usuário já possui acesso a este pluviometro!');
         }
 
