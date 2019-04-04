@@ -23,6 +23,7 @@ class DashboardController extends Controller
    	 	return view('dashboard', compact('pluviometros', 'array'));
     }
 
+/*
     public function showByDate(Request $request){
 
     	$lava = new Lavacharts;
@@ -45,5 +46,5 @@ class DashboardController extends Controller
 
     	return view('dashboard',["lava" =>$lava]);
 
-    }
+    } */
 }
