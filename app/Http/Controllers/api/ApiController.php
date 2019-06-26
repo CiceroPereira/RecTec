@@ -40,6 +40,14 @@ class ApiController extends Controller
     {
         $pluviometria = Pluviometria::create($request->all());
 
+        $hora = date('H:i');
+        $date = date('Y/m/d');
+
+        DB::table('pluviometrias')->insert(
+            ['data' => $date, 'hora' => $hora, 'lamina' => $pluviometria->lamina,
+            'user_id' => 1, 'pluviometro_id' => 1 ]
+        );
+
         return response()->json($pluviometria, 201);
     }
 
