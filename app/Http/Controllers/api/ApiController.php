@@ -43,12 +43,15 @@ class ApiController extends Controller
         $pluviometria = new Pluviometria;
 
         $pluviometria->lamina = $request->lamina;
+        $pluviometria->user_id = $request->user_id;
+        $pluviometria->pluviometro_id = $request->pluviometro_id;
+
         $hora = date('H:i');
         $date = date('Y/m/d');
 
         DB::table('pluviometrias')->insert(
             ['data' => $date, 'hora' => $hora, 'lamina' => $pluviometria->lamina,
-            'user_id' => 1, 'pluviometro_id' => 1 ]
+            'user_id' => $pluviometria->user_id, 'pluviometro_id' => $pluviometria->pluviometro_id ]
         );
 
         return response()->json($pluviometria, 201);
