@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Pluviometria;
+use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
 {
@@ -38,8 +39,10 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
-        $pluviometria = Pluviometria::create($request->all());
+       // $pluviometria = Pluviometria::create($request->all());
+        $pluviometria = new Pluviometria;
 
+        $pluviometria->lamina = $request->lamina;
         $hora = date('H:i');
         $date = date('Y/m/d');
 
