@@ -5,6 +5,7 @@ namespace App\Http\Controllers\api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Pluviometria;
+use App\Models\Pluviometro;
 use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
@@ -105,6 +106,29 @@ class ApiController extends Controller
         $dado->delete();
 
         return back()->with(['success' => 'Dado deletado com sucesso']);
+
+    }
+
+    public function getHour(){
+
+        $hora = date('H:i');
+
+        return response()->json($hora);
+    }
+
+    public function allPluviometers(){
+
+        $all = Pluviometro::all();
+
+        return response()->json($all);
+    }
+
+
+    public function getMedByPluvId($id){
+
+        $all = DB::table('pluviometrias')->where('pluviometro_id', '=', $id)->get();
+
+        return response()->json($all);
 
     }
 }

@@ -39,3 +39,6 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/api/show/{id}', 'api\ApiController@show');
 	Route::get('/api/destroy/{id}', 'api\ApiController@destroy');
 	Route::post('/api/store', 'api\ApiController@store');
+	Route::get('/api/hora', 'api\ApiController@getHour');
+	Route::get('/api/pluviometros', 'api\ApiController@allPluviometers');
+	Route::get('/api/getmea/{id}', 'api\ApiController@getMedByPluvId');
