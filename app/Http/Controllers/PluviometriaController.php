@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Client
+use GuzzleHttp\Client;
 
 class PluviometriaController extends Controller
 {
