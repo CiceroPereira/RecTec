@@ -135,7 +135,7 @@ class PluviometriaController extends Controller
                 $timestamp = strtotime($dateHour); 
                 $timestamp = $timestamp*1000;
 
-                $url = 'http://172.16.68.21:8080/api/v1'.$accessToken.'/telemetry';
+                $url = 'http://172.16.68.21:8080/api/v1/'.$accessToken.'/telemetry';
                 $client = new Client(); //GuzzleHttp\Client
                 $result = $client->request('POST',$url, ['json' => ['ts' => $timestamp, 
                     'values' => ['lamina' => $pluviometrias->lamina]]
