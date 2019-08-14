@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/dashboard/interval', 'DashboardController@showByDate');
  });
 
+/*
 	Route::get('/api/index', 'api\ApiController@index');
 	Route::get('/api/show/{id}', 'api\ApiController@show');
 	Route::get('/api/destroy/{id}', 'api\ApiController@destroy');
@@ -42,3 +43,5 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('/api/hora', 'api\ApiController@getHour');
 	Route::get('/api/pluviometros', 'api\ApiController@allPluviometers');
 	Route::get('/api/getmea/{id}', 'api\ApiController@getMedByPluvId');
+*/
+	Route::get('/api/things', 'api\ApiController@things');
