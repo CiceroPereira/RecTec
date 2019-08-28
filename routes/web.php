@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::post('/gettipo', 'PluviometriaController@buscaTipo');
 	Route::get('/dashboard', 'DashboardController@index');
 	Route::get('/dashboard/interval', 'DashboardController@showByDate');
+	Route::get('/pluviometro', 'PluviometroController@create');
+	Route::post('/pluviometro', 'PluviometroController@store');
  });
 
 /*

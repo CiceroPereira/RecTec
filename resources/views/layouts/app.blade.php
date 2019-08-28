@@ -87,6 +87,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/configurar') }}">{{ __('Configurar medidor') }}</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/pluviometro') }}">{{ __('Novo pluviometro') }}</a>
+                        </li>
                         @endif
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/listar') }}">{{ __('Histórico') }}</a>
