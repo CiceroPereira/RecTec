@@ -1,4 +1,3 @@
-## Api pacientes
 
 ### Pré requisitos para rodar o laravel
 
