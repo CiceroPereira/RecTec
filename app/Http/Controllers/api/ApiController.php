@@ -199,6 +199,105 @@ class ApiController extends Controller
                 elseif ($pluviometrias->pluviometro_id == 20) { //2014-automático-06
                     $accessToken = 'TZUnIEVmN3GM06qHj84U';
                 }
+                elseif ($pluviometro_id == 21) { //2019-goiana-260620001V-28
+                    $accessToken = 'Fyjbru0MZnaCqRA7C1LR';
+                }
+                elseif ($pluviometro_id == 22) { //2019-moreno-260940201V-205
+                    $accessToken = 'deWt6517y0HIsmKrndht';
+                }
+                elseif ($pluviometro_id == 23) { //2019-agua-preta-260040101V-80
+                    $accessToken = 'vBTFYwpgVgn4ftMsR0He';
+                }
+                elseif ($pluviometro_id == 24) { //2019-amaraji-260090601V-105
+                    $accessToken = 'CH1ZIAZbNAr5x0wK2lVH';
+                }
+                elseif ($pluviometro_id == 25) { //2019-barreiros-260140901V-106
+                    $accessToken = '18sJ91frX9DQmbgDIw21';
+                }
+                elseif ($pluviometro_id == 26) { //2019-buenos-aires-260270401V-96
+                    $accessToken = 'WL7hT7JAcb3fi3gBFeOk';
+                }
+                elseif ($pluviometro_id == 27) { //2019-camutanga-260360302V-514
+                    $accessToken = 'm2kH0NiHU4ORExY50qcz';
+                }
+                elseif ($pluviometro_id == 28) { //2019-catende-260420503V-527
+                    $accessToken = '7nREgVi6VkPDaNK9MyHV';
+                }
+                elseif ($pluviometro_id == 29) { //2019-cha-grande-260450201V-117
+                    $accessToken = 'yebHEh5VH8b45stkRFxh';
+                }
+                elseif ($pluviometro_id == 30) { //2019-condado-260460101V-131
+                    $accessToken = 'dcyUtJVfAOR1USKYELdR';
+                }
+                elseif ($pluviometro_id == 31) { //2019-cortes-260480902A
+                    $accessToken = 'xsFhmw7kBTvYFlU4Hqsy';
+                }
+                elseif ($pluviometro_id == 32) { //2019-ferreiros-260550901V-457
+                    $accessToken = 'dMvqrdDwYDwolf86HOiv';
+                }
+                elseif ($pluviometro_id == 33) { //2019-gloria-goita-260610101V-136
+                    $accessToken = 'pKVwZwkOFWr83GtGQQla';
+                }
+                elseif ($pluviometro_id == 34) { //2019-itambe-260765302V-27
+                    $accessToken = 'gDdmTnL77WJN91rFGNO8';
+                }
+                elseif ($pluviometro_id == 35) { //2019-itaquitinga-260780201V-101
+                    $accessToken = '1q53xSjoG3gDK5GP3jwa';
+                }
+                elseif ($pluviometro_id == 36) { //2019-jaqueira-260795002V-508
+                    $accessToken = 'cDMjoGvVgH184fWZ8ZuE';
+                }
+                elseif ($pluviometro_id == 37) { //2019-joaquim-nabuco-260590501V-285
+                    $accessToken = '3aFdQt3K7nOUaDnic3ti';
+                }
+                elseif ($pluviometro_id == 38) { //2019-lagoa-do-cano-260845301V-204
+                    $accessToken = 'jYLBfrmXrrTuMa6Ud6f5';
+                }
+                elseif ($pluviometro_id == 39) { //2019-macaparana-260900601V-94
+                    $accessToken = 'Iar0hZMnWjRjVlgmjoX0';
+                }
+                elseif ($pluviometro_id == 40) { //2019-miraial-260795001V-316
+                    $accessToken = 'Iar0hZMnWjRjVlgmjoX0';
+                }
+                elseif ($pluviometro_id == 41) { //2019-nazare-mata-260950101V-97
+                    $accessToken = '4mX4ELIWPQxmyf4Qob0v';
+                }
+                elseif ($pluviometro_id == 42) { //2019-palmares-261000401V-25
+                    $accessToken = 'JgMnOO1o8g6FleZTS2Z6';
+                }
+                elseif ($pluviometro_id == 43) { //2019-paudalho-261060801V-98
+                    $accessToken = '11PzY9TGZene9hzVIWQY';
+                }
+                elseif ($pluviometro_id == 44) { //2019-pombos-261130901V-127
+                    $accessToken = '27q2GUp9zDj2qyHylynI';
+                }
+                elseif ($pluviometro_id == 45) { //2019-quipapa-261150703V-525
+                    $accessToken = 'OGOIuwiIY1GwhKGi3lCx';
+                }
+                elseif ($pluviometro_id == 46) { //2019-sao-bernadito-sul-260870102V-188
+                    $accessToken = 'tzwdykf5qsauvAmr9CWk';
+                }
+                elseif ($pluviometro_id == 47) { //2019-saojose-coroagrande-261340401V-110
+                    $accessToken = 'Oyza2Pnn2qTm4zmRcTdd';
+                }
+                elseif ($pluviometro_id == 48) { //2019-sirinhaem-261420401V-111
+                    $accessToken = 'IqVcIXJN8i6pSoRK47jg';
+                }
+                elseif ($pluviometro_id == 49) { //2019-tamandare-261485701V-510
+                    $accessToken = 't8KdEEVZfNtldWsqnisL';
+                }
+                elseif ($pluviometro_id == 50) { //2019-timbauba-261530001V-99
+                    $accessToken = 'cv8PjZhIfiEXM1hXhZyw';
+                }
+                elseif ($pluviometro_id == 51) { //2019-tracunhaem-261550801V-515
+                    $accessToken = '5qCf4ZKzzAdKf7iijHd1';
+                }
+                elseif ($pluviometro_id == 52) { //2019-vicencia-261630801V-134
+                    $accessToken = 'gR5wqrSRkfEEG68WSJ3W';
+                }
+                elseif ($pluviometro_id == 53) { //2019-vitoria-sto-antao-261640701V-26
+                    $accessToken = 'Rab71i2jeN8gJA7r0Rao';
+                }
 
                 $data = $pluviometrias->data.' '.$pluviometrias->hora;
                 $timestamp = strtotime($data); 
