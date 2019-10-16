@@ -12,8 +12,8 @@
 * Configurar a conexão de banco do arquivo .env
 
 ```bash
-> composer dump-autoload
 > composer install
+> composer dump-autoload
 > php artisan key:generate
 > php artisan config:clear
 > php artisan migrate
