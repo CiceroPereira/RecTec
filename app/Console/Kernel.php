@@ -33,7 +33,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('command:altoMandu')->everyMinute();
         $schedule->command('command:areia')->everyMinute();
         $schedule->command('command:boaVista')->everyMinute();
-        $schedule->command('command:campinaDoBarreto')->everyMinute();
+        /*$schedule->command('command:campinaDoBarreto')->everyMinute();
         $schedule->command('command:corregoDoJenipapo')->everyMinute();
         $schedule->command('command:doisUnidos')->everyMinute();
         $schedule->command('command:ibura')->everyMinute();
@@ -45,7 +45,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('command:torreao')->everyMinute();
         $schedule->command('command:upaAltoBelaVista')->everyMinute();
         $schedule->command('command:upaImbiribeira')->everyMinute();
-        $schedule->command('command:upaNovaDescoberta')->everyMinute();
+        $schedule->command('command:upaNovaDescoberta')->everyMinute();*/
     }
 
     /**
