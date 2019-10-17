@@ -51,7 +51,7 @@ class UpaNovaDescoberta extends Command
         $quinzeMin = json_encode(DB::connection('another')->select("SELECT min15 FROM pluviometria_apac.mon_estacao_ultimo_dado_chuva WHERE estacao_id = 1178"));
         $quinze =((double) (substr($quinzeMin, 11, -3)));
         
-        $url = 'http://172.16.68.21:8080/api/v1/EzWfmpi77PnJtsHIM7f3/telemetry';
+        $url = 'http://172.16.68.21:8080/api/v1/QCgZYvou73HMRrgJ3knj/telemetry';
         $client = new Client();
         $result = $client->request('POST',$url, [
             'json' => ['ts' => $timestamp, 'values' => ['15 minutos' => $quinze]]
@@ -61,7 +61,7 @@ class UpaNovaDescoberta extends Command
         $trintaMin = json_encode(DB::connection('another')->select("SELECT min30 FROM pluviometria_apac.mon_estacao_ultimo_dado_chuva WHERE estacao_id = 1178"));
         $trinta =((double) (substr($trintaMin, 11, -3)));
         
-        $url = 'http://172.16.68.21:8080/api/v1/EzWfmpi77PnJtsHIM7f3/telemetry';
+        $url = 'http://172.16.68.21:8080/api/v1/QCgZYvou73HMRrgJ3knj/telemetry';
         $client = new Client();
         $result = $client->request('POST',$url, [
             'json' => ['ts' => $timestamp, 'values' => ['30 minutos' => $trinta]]
@@ -71,7 +71,7 @@ class UpaNovaDescoberta extends Command
         $umaHora = json_encode(DB::connection('another')->select("SELECT min60 FROM pluviometria_apac.mon_estacao_ultimo_dado_chuva WHERE estacao_id = 1178"));
         $uma =((double) (substr($umaHora, 11, -3)));
         
-        $url = 'http://172.16.68.21:8080/api/v1/EzWfmpi77PnJtsHIM7f3/telemetry';
+        $url = 'http://172.16.68.21:8080/api/v1/QCgZYvou73HMRrgJ3knj/telemetry';
         $client = new Client();
         $result = $client->request('POST',$url, [
             'json' => ['ts' => $timestamp, 'values' => ['1 hora' => $uma]]
@@ -81,7 +81,7 @@ class UpaNovaDescoberta extends Command
         $duasHoras = json_encode(DB::connection('another')->select("SELECT min120 FROM pluviometria_apac.mon_estacao_ultimo_dado_chuva WHERE estacao_id = 1178"));
         $duas =((double)(substr($duasHoras, 12, -3)));
         
-        $url = 'http://172.16.68.21:8080/api/v1/EzWfmpi77PnJtsHIM7f3/telemetry';
+        $url = 'http://172.16.68.21:8080/api/v1/QCgZYvou73HMRrgJ3knj/telemetry';
         $client = new Client();
         $result = $client->request('POST',$url, [
             'json' => ['ts' => $timestamp, 'values' => ['2 horas' => $duas]]
@@ -91,7 +91,7 @@ class UpaNovaDescoberta extends Command
         $tresHoras = json_encode(DB::connection('another')->select("SELECT min180 FROM pluviometria_apac.mon_estacao_ultimo_dado_chuva WHERE estacao_id = 1178"));
         $tres =((double) (substr($tresHoras, 12, -3)));
         
-        $url = 'http://172.16.68.21:8080/api/v1/EzWfmpi77PnJtsHIM7f3/telemetry';
+        $url = 'http://172.16.68.21:8080/api/v1/QCgZYvou73HMRrgJ3knj/telemetry';
         $client = new Client();
         $result = $client->request('POST',$url, [
             'json' => ['ts' => $timestamp, 'values' => ['3 horas' => $tres]]
@@ -101,7 +101,7 @@ class UpaNovaDescoberta extends Command
         $seisHoras = json_encode(DB::connection('another')->select("SELECT min360 FROM pluviometria_apac.mon_estacao_ultimo_dado_chuva WHERE estacao_id = 1178"));
         $seis =((double) (substr($seisHoras, 12, -3)));
         
-        $url = 'http://172.16.68.21:8080/api/v1/EzWfmpi77PnJtsHIM7f3/telemetry';
+        $url = 'http://172.16.68.21:8080/api/v1/QCgZYvou73HMRrgJ3knj/telemetry';
         $client = new Client();
         $result = $client->request('POST',$url, [
             'json' => ['ts' => $timestamp, 'values' => ['6 horas' => $seis]]
@@ -111,7 +111,7 @@ class UpaNovaDescoberta extends Command
         $dozeHoras = json_encode(DB::connection('another')->select("SELECT min720 FROM pluviometria_apac.mon_estacao_ultimo_dado_chuva WHERE estacao_id = 1178"));
         $doze =((double) (substr($dozeHoras, 12, -3)));
         
-        $url = 'http://172.16.68.21:8080/api/v1/EzWfmpi77PnJtsHIM7f3/telemetry';
+        $url = 'http://172.16.68.21:8080/api/v1/QCgZYvou73HMRrgJ3knj/telemetry';
         $client = new Client();
         $result = $client->request('POST',$url, [
             'json' => ['ts' => $timestamp, 'values' => ['12 horas' => $doze]]
@@ -121,7 +121,7 @@ class UpaNovaDescoberta extends Command
         $umDia = json_encode(DB::connection('another')->select("SELECT min1440 FROM pluviometria_apac.mon_estacao_ultimo_dado_chuva WHERE estacao_id = 1178"));
         $dia =((double) (substr($umDia, 13, -3)));
         
-        $url = 'http://172.16.68.21:8080/api/v1/EzWfmpi77PnJtsHIM7f3/telemetry';
+        $url = 'http://172.16.68.21:8080/api/v1/QCgZYvou73HMRrgJ3knj/telemetry';
         $client = new Client();
         $result = $client->request('POST',$url, [
             'json' => ['ts' => $timestamp, 'values' => ['24 horas' => $dia]]

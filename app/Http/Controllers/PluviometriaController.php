@@ -74,10 +74,10 @@ class PluviometriaController extends Controller
         );
         
         if($pluviometro_id == 1){ //2018-prae-01
-                    $accessToken = 'vOmwtG6lDLjle11arv8L';
+                    $accessToken = 'TyzUlPJD4gjYwsRft1Tl';
                 }
                 elseif ($pluviometro_id == 2) { //2018-prae-02
-                    $accessToken = '12yzaUftpb0e5jKyGTq6';
+                    $accessToken = '6ElibN3BfIyX5nSyQNYD';
                 }
                 elseif ($pluviometro_id == 3) { //2018-dois-irmaos-01
                     $accessToken = 'goGguuGHKCpurEXy1dlN';
@@ -301,10 +301,10 @@ class PluviometriaController extends Controller
         $dado->update(); 
 
         if($dado->pluviometro_id == 1){ //2018-prae-01
-                    $accessToken = 'vOmwtG6lDLjle11arv8L';
+                    $accessToken = 'TyzUlPJD4gjYwsRft1Tl';
                 }
-                elseif ($dado->pluviometro_id == 2) { //2018-prae-02
-                    $accessToken = '12yzaUftpb0e5jKyGTq6';
+                elseif ($pluviometro_id == 2) { //2018-prae-02
+                    $accessToken = '6ElibN3BfIyX5nSyQNYD';
                 }
                 elseif ($dado->pluviometro_id == 3) { //2018-dois-irmaos-01
                     $accessToken = 'goGguuGHKCpurEXy1dlN';
