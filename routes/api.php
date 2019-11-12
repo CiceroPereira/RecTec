@@ -17,11 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::namespace('API')->name('api.')->group(function() {  
+Route::namespace('api')->name('api.')->group(function() {  
     Route::post('/login', 'UserController@login')->name('login_user');
 });
 
-Route::middleware('auth.basic')->namespace('API')->name('api.')->group(function() {
+Route::middleware('auth.basic')->namespace('api')->name('api.')->group(function() {
     Route::post('/register', 'UserController@store')->name('register_user');
     
     Route::get('/pluviometria', 'PluviometriaController@index')->name('index_pluviometrias');
