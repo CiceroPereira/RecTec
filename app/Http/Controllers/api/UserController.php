@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function index () {
+        $all = User::all();
+        return response()->json($all);
+    }
+
+    public function show (User $id) {
+        return $id;
+    }
+
     public function store (Request $request) {
         try {
             $user = new User;
@@ -40,7 +49,8 @@ class UserController extends Controller
             $hashedPassword = DB::select("SELECT password FROM users WHERE email='$email'");
 
             if (Hash::check($password, $hashedPassword[0]->password)) {
-                return response()->json("Login efetuado com sucesso", 201);
+                $contaAutenticada = array('email' => $email, 'password' => $password);
+                return response()->json($contaAutenticada, 201);
             }
             return response()->json('Senha incorreta', 501);
         } catch (\Exception $e) {

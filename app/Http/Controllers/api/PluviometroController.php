@@ -13,6 +13,11 @@ class PluviometroController extends Controller {
         $all = Pluviometro::all();
         return response()->json($all);
     }
+
+    public function show (Pluviometro $id) {
+        return $id;
+    }
+
     public function store (Request $request) {
         try {
             $pluviometro = new Pluviometro;

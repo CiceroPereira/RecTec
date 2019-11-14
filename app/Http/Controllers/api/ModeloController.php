@@ -29,4 +29,8 @@ class ModeloController extends Controller
             return response()->json(['msg' => 'Houve um erro ao realizar o cadastro do modelo'], 500);
         }
     }
+
+    public function show (Modelo $id) {
+        return $id;
+    }
 }

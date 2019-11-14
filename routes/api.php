@@ -23,7 +23,9 @@ Route::namespace('api')->name('api.')->group(function() {
 
 Route::middleware('auth.basic')->namespace('api')->name('api.')->group(function() {
     Route::post('/register', 'UserController@store')->name('register_user');
-    
+    Route::get('/user', 'UserController@index')->name('index_user');
+    Route::get('/user/{id}', 'UserController@show')->name('single_user');
+
     Route::get('/pluviometria', 'PluviometriaController@index')->name('index_pluviometrias');
     Route::get('/pluviometria/{id}', 'PluviometriaController@show')->name('single_pluviometria');
     Route::post('/pluviometria', 'PluviometriaController@store')->name('store_pluviometria'); 
@@ -32,7 +34,9 @@ Route::middleware('auth.basic')->namespace('api')->name('api.')->group(function(
 
     Route::get('/pluviometro', 'PluviometroController@index')->name('index_pluviometro');
     Route::post('/pluviometro', 'PluviometroController@store')->name('store_pluviometro');
+    Route::get('/pluviometro/{id}', 'PluviometroController@show')->name('single_pluviometro');
 
     Route::get('/modelo', 'ModeloController@index')->name('index_modelo');
     Route::post('/modelo', 'ModeloController@store')->name('store_modelo');
+    Route::get('/modelo/{id}', 'ModeloController@show')->name('show_modelo');
 });
