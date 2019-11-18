@@ -49,7 +49,8 @@ class UserController extends Controller
             $hashedPassword = DB::select("SELECT password FROM users WHERE email='$email'");
 
             if (Hash::check($password, $hashedPassword[0]->password)) {
-                $contaAutenticada = array('email' => $email, 'password' => $password);
+                $idUser = DB::select("SELECT id FROM users WHERE email='$email'");
+                $contaAutenticada = array('email' => $email, 'password' => $password, 'id' => $idUser[0]->id);
                 return response()->json($contaAutenticada, 201);
             }
             return response()->json('Senha incorreta', 501);
